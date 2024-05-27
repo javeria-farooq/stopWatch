@@ -78,15 +78,18 @@ function startFnc(){
 
 startBtn.addEventListener("click", startFnc)
 
-pauseBtn.addEventListener("click", ()=> {
+function pauseFnc() {
     clearInterval(timer)
     startBtn.disabled = false
     startBtn.classList.remove("disabled")
     pauseBtn.disabled = true
     pauseBtn.classList.add("disabled")
-})
+}
+
+pauseBtn.addEventListener("click", pauseFnc)
 
 resetBtn.addEventListener("click", ()=> {
+    pauseFnc()
     hours = 0
     minutes = 0
     seconds = 0
